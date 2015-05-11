@@ -1,0 +1,26 @@
+inherit kf5
+
+NAME="kf5-kxmlrpcclient"
+VERSION=5.10.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 XML-RPC client library"
+DESCRIPTION="This library contains simple XML-RPC Client support. It is a
+complete client and is quite easy to use. Only one interface is exposed to the
+world, kxmlrpcclient/client.h and of that interface, you only need to
+use 3 methods: setUrl, setUserAgent and call."
+
+PKG_NAMES="libKF5XmlRpcClient5 libKF5XmlRpcClient-devel"
+libKF5XmlRpcClient5_CONTENTS="
+	usr/bin/cygKF5XmlRpcClient-5.dll
+	usr/share/doc/
+	usr/share/locale/
+"
+libKF5XmlRpcClient_devel_REQUIRES="libQt5Core-devel"
+libKF5XmlRpcClient_devel_CONTENTS="
+	usr/include/KF5/KXmlRpcClient/
+	usr/include/KF5/kxmlrpcclient_version.h
+	usr/lib/cmake/KF5XmlRpcClient/
+	${QT5_MKSPECSDIR#/}/modules/qt_KXmlRpcClient.pri
+	usr/lib/libKF5XmlRpcClient.dll.a
+"
