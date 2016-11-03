@@ -1,0 +1,11 @@
+--- origsrc/kxmlrpcclient-5.27.0/autotests/CMakeLists.txt	2016-10-02 05:02:54.000000000 -0500
++++ src/kxmlrpcclient-5.27.0/autotests/CMakeLists.txt	2016-11-01 23:25:58.748763000 -0500
+@@ -2,6 +2,8 @@ include(ECMAddTests)
+ 
+ find_package(Qt5Test CONFIG REQUIRED)
+ 
++add_definitions(-DKXMLRPCCLIENT_STATIC_DEFINE)
++
+ include_directories(${CMAKE_SOURCE_DIR}/src ${CMAKE_BINARY_DIR}/src)
+ 
+ macro(add_kxmlrpc_test _name)
